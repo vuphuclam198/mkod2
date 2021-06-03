@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page layout="3columns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <update handle="default_head_blocks"/>
+    <body>
+        <referenceBlock name="header" remove="true"/>
+        <referenceBlock name="top.links" remove="true"/>
+        <referenceBlock name="skip_to_content" remove="true"/>
+        <referenceBlock name="footer_links" remove="true"/>
+        <referenceBlock name="copyright" remove="true"/>
+        <referenceBlock name="report.bugs" remove="true"/>
+        
+        
+        <referenceContainer name="header-wrapper">
+            <container name="header-center-right" htmlTag="div" htmlClass="header-center-right" after="-">
+                <block class="Magento\Checkout\Block\Cart\Sidebar" name="header-center-right-contact" template="Magento_Theme::header_center/header_center_right.phtml" after="-"/>
+            </container>
+            
+        </referenceContainer>
+        <referenceContainer name="header.panel">
+            <block class="Magento\Framework\View\Element\Template" name="header-top-left" template="Magento_Theme::header_top/header_top_left.phtml"/>
+            <block class="Magento\Framework\View\Element\Template" name="header-top-center" template="Magento_Theme::header_top/header_top_center.phtml"/>
+            <block class="Magento\Framework\View\Element\Template" name="header-top-right" template="Magento_Theme::header_top/header_top_right.phtml"/>
+        </referenceContainer>
+
+        <referenceContainer name="footer">
+            <container name="footer.top" htmlClass="footer-top" htmlTag="div" before="-">
+                <block class="Magento\Framework\View\Element\Template" name="footer-top-left" template="Magento_Theme::footer_top/left.phtml"/>
+            </container>
+            <container name="footer.bottom" htmlClass="footer-bottom" htmlTag="div" after="-">
+                <block class="Magento\Framework\View\Element\Template" name="footer-bottom-left" template="Magento_Theme::footer_bottom/left.phtml" before="-"/>
+                <block class="Magento\Framework\View\Element\Template" name="footer-bottom-center" template="Magento_Theme::footer_bottom/center.phtml" before="footer-bottom-right"/>
+                <block class="Magento\Framework\View\Element\Template" name="footer-bottom-right" template="Magento_Theme::footer_bottom/right.phtml" after="-"/>
+                
+            </container>
+            <container name="footer.copyright" htmlClass="footer-copyright" htmlTag="div" after="-">
+                <block class="Magento\Framework\View\Element\Template" name="footer-copyright" template="Magento_Theme::footer_copyright.phtml" before="-"/>
+            </container>
+        </referenceContainer>
+        <move element="logo" destination="header-wrapper" after="top.search"/>
+
+        <move element="minicart" destination="header-center-right" after="logo"/>
+        <!-- <referenceBlock name="minicart" remove="true"/> -->
+        
+        
+        
+    </body>
+</page>
