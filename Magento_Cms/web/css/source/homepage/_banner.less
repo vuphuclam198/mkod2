@@ -1,0 +1,154 @@
+& when (@media-common = true) {
+    .banner {
+        position: relative;
+        
+        
+        img {
+            width: 100%;
+            height: 100%;
+        }
+        &__title {
+            position: absolute;
+            color: @color__title__product;
+            font-weight: 300;
+            font-family: @font-family__base;
+            text-transform: uppercase;
+        }
+        &__button {
+            &:hover {
+                color: #ff87c5;;
+            }
+            & a{
+                position: absolute;
+                font-weight: 700;
+                font-family: @font-family__base;
+                text-transform: uppercase;
+                background-color: @color-f9f8f7;
+                color: @color__title__product;
+            }
+            
+        }
+    }
+}
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__xs) {
+    .banner {
+        &__title {
+            font-size: @font-size-21px;
+            line-height: 21px;
+            top:29%;
+            left: 50%;
+        }
+        &__button {
+            & a{
+                font-size: @font-size-15px;
+                top: 60%;
+                left: 50%;
+            }
+            
+        }
+    }
+}
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__s) {
+    .banner {
+        &__title {
+            font-size: @font-size-28px;
+            line-height: 28px;
+            top:29%;
+            left: 50%;
+        }
+        &__button {
+            & a{
+                font-size: @font-size-15px;
+                top: 55%;
+                left: 50%;
+                padding: 5px 10px 5px 10px;
+            }
+            
+        }
+    }
+}
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+    .banner {
+        padding-top: 8px;
+        img:nth-child(1) {
+            display: none;
+        }
+        &__title {
+            text-align: center;
+            font-size: @font-size-48px;
+            line-height: 48px;
+            top:29%;
+            left: 50%;
+            transform: translate(-50%);
+        }
+        &__button {
+            & a{
+                font-size: @font-size-18px;
+                top: 66%;
+                left: 49%;
+                transform: translate(-50%);
+                padding: 5px 30px 5px 35px;
+            }
+            
+        }
+    }
+}
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+    .banner {
+        
+        img:nth-child(2) {
+            display: none;
+        }
+        &__title {
+            font-size: @font-size-33px;
+            line-height: 48px;
+            top:45%;
+            left: 50%;
+            transform: translate(-50%);
+        }
+        &__button {
+            & a{
+                font-size: @font-size-15px;
+                top: 60%;
+                left: 50%;
+                transform: translate(-50%);
+                padding: 5px 20px 5px 20px;
+            }
+            
+        }
+    }
+}
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__l) {
+    .banner {
+        &__title {
+            font-size: @font-size-42px;
+            line-height: 48px;
+            top:45%;
+            left: 50%;
+            transform: translate(-50%);
+        }
+        &__button {
+            & a{
+                font-size: @font-size-18px;
+                top: 57.2%;
+                left: 50%;
+                transform: translate(-50%);
+                padding: 5px 28px 5px 36px;
+            }
+            
+        }
+    }
+}
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__xl) {
+    
+    .banner {
+        &__title {
+            font-size: @font-size-72px;
+            line-height: 48px;
+            top:46%;
+            left: 49%;
+            transform: translate(-50%);
+        }
+        
+    }
+}

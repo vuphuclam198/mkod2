@@ -1,0 +1,275 @@
+& when (@media-common = true) {
+    .block-title {
+        color: @color__title__product;
+        font-weight: 400;
+        font-family: @font-family__base;
+        text-align: center;
+        text-transform: uppercase;
+    }
+    
+    .featured-item {
+        position: relative;
+        
+        
+        &__title {
+            position: absolute;
+            color: @color-white;
+            font-family: @font-family__fugue;
+            text-align: center;
+        }
+        &__link {
+            position: absolute;
+            color: @color-white;
+            font-family: @font-family__fugue;
+            text-align: center;
+            text-decoration: underline;
+            text-transform: uppercase;
+            cursor: pointer;
+            &:hover {
+                color: #ff87c5;
+                text-decoration: underline;
+            }
+        }
+    }
+    .widget .block-title > strong {
+        font-weight: 400; 
+    }
+    .slick-slide img {
+        display: unset;
+    }
+    .slick-next {
+        &:before {
+            content: url(../image/next.png);
+        }
+    }
+    .slick-prev {
+        &:before {
+            content: url(../image/prev.png);
+        }
+    }
+    
+}
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__xs) {
+    .block-title {
+        font-size: @font-size-25px;
+        line-height: 25px;
+        padding: 20px 0px 35px;
+    }
+    .block-title {
+        strong {
+            font-weight: 400; 
+            line-height: 25px; 
+            font-size: @font-size-25px; 
+        }
+    }
+    .featured-item {
+        img {
+            width: 86%;
+            height: 100%;
+        }
+    }
+    .featured-items {
+        .slick-next {
+            right: 14px;
+            
+        }
+        .slick-prev {
+            left: -20px;
+            
+        }
+    }
+}
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__s) {
+    .featured-item {
+        img {
+            width: 55%;
+            height: 100%;
+        }
+    }
+    .featured-items {
+        .slick-next {
+            right: 20px;
+            
+        }
+        .slick-prev {
+            left: -10px;
+            
+        }
+    }
+}
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+    .featured-products {
+        padding-left: 10px;
+    }
+    .block-title {
+        font-size: 36px;
+        line-height: 48px;
+        padding: 20px 0px 35px;
+    }
+    .block-title {
+        strong {
+            font-weight: 400; 
+            line-height: 48px; 
+            font-size: @font-size-36px; 
+        }
+    }
+    
+    .featured-item {
+        text-align: center;
+        &__title {
+            display: none;
+        }
+        &__link {
+            width: 100%;
+            top: 57%;
+            left: 50%;
+            transform: translate(-50%);
+            font-size: @font-size-30px;
+            line-height: 24px;
+        }
+    }
+    .widget .block-title > strong {
+        line-height: 48px; 
+        font-size: 36px; 
+        margin-top: unset;
+        margin-bottom: unset;
+    }
+    .featured-items {
+        .slick-next {
+            right: 50px;
+            
+        }
+        .slick-prev {
+            left: 15px ;
+            
+        }
+        
+    }
+    
+    
+}
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+    .block-title {
+        font-size: @font-size-36px;
+        line-height: 48px;
+        padding: 35px 0px 45px 0;
+    }
+    .block-title {
+        strong {
+            font-weight: 400; 
+            line-height: 48px; 
+            font-size: @font-size-36px; 
+        }
+    }
+    
+    .featured-item {
+        padding: 0 20px;
+        img {
+            // width: 100%;
+            height: 100%;
+        }
+        &__title {
+            top: 38.5%;
+            left: 50%;
+            transform: translate(-50%);
+            font-size: 35px;
+            line-height: 35px;
+        }
+        &__link {
+            width: 100%;
+            top: 70%;
+            left: 50%;
+            transform: translate(-50%);
+            font-size: 24px;
+            line-height: 24px;
+        }
+    }
+    .widget .block-title > strong {
+        line-height: 48px; 
+        font-size: @font-size-36px; 
+        margin-top: unset;
+        margin-bottom: unset;
+    }
+    .slick-track div:nth-child(3n+2) {
+        
+        .featured-item {
+            &__title {
+                top: 45.5%;
+            }
+        }
+    }
+    .slick-track div:nth-child(3n+3) {
+        
+        .featured-item {
+            &__title {
+                top: 45.5%;
+            }
+        }
+    }
+    
+}
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__l) {
+    
+    .featured-item {
+        &__link {
+            top: 60%;
+            font-size: @font-size-30px;
+            line-height: 24px;
+        }
+        &__title {
+            top: 38.5%;
+            font-size: @font-size-48px;
+            line-height: 41px;
+        }
+    }
+    .slick-track div:nth-child(3n+2) {
+        
+        .featured-item {
+            &__title {
+                top: 42.5%;
+            }
+        }
+    }
+    .slick-track div:nth-child(3n+3) {
+        
+        .featured-item {
+            &__title {
+                top: 42.5%;
+            }
+        }
+    }
+}
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__xl) {
+    .featured-items {
+        padding-left: 10px;
+        
+    }
+    .featured-item {
+        padding: 0;
+        &__link {
+            top: 57%;
+            left: 49.5%;
+        }
+    }
+    .slick-track div:nth-child(3n+1) {
+        
+        .featured-item {
+            padding-right: 40px;
+        }
+    }
+    .slick-track div:nth-child(3n+2) {
+        
+        .featured-item {
+            padding: 0 23px;
+            
+        }
+    }
+    .slick-track div:nth-child(3n+3) {
+        
+        .featured-item {
+            padding-left: 30px;
+            padding-right: 10px;
+            
+        }
+    }
+}
