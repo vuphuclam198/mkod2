@@ -1,0 +1,264 @@
+& when (@media-common = true) {
+    
+    a.footer-title {
+        text-transform: uppercase;
+        color: @color-090909;
+        font-family: @font-family__fugue;
+        text-align: center;
+        &:hover {
+            color:#ff87c5;
+        }
+    }
+    .footer-content {
+        
+        a{
+            color: @color-090909;
+            font-weight: 300;
+            font-family: @font-family__base;
+            
+            &:hover {
+                color:#ff87c5;
+            }
+            p {
+                // line-height: 21px;
+                color: @color-090909;
+                font-weight: 300;
+                font-family: @font-family__base;
+            }
+        }
+    }
+    .footer-copyright {
+        line-height: 14px;
+        color: @color-090909;
+        font-weight: 300;
+        font-family: @font-family__base;
+        cursor: pointer;
+        &:hover {
+            color:#ff87c5;
+        }
+    }
+}.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__xs) { 
+    // .footer-bottom {
+    //     border-top: 1px solid #888888;
+    //     margin-top: 98px;
+    // }
+    .footer-title {
+        font-size: @font-size-28px;
+    }
+    .footer-bottom {
+        &__left {
+            margin-top: 35px;
+        }
+        &__center {
+            margin-top: 35px;
+        }
+        &__right {
+            margin-top: 35px;
+            margin-bottom: 75px;
+            
+        }
+    }
+    .footer-content {
+        font-size: @font-size-16px;
+        line-height: 30px;
+        
+        
+    }
+    .footer-copyright {
+        text-align: center;
+        font-size: @font-size-13px;
+        width: 100%;
+        left: 50%;
+    }
+}
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__s) { 
+    
+    .footer-bottom {
+        margin-top: 65px;
+        &__left {
+            margin-top: 50px;
+        }
+        &__center {
+            margin-top: 50px;
+        }
+        &__right {
+            margin-top: 50px;
+            margin-bottom: 100px;
+            
+        }
+    }
+    .footer-content {
+        font-size: @font-size-21px;
+        line-height: 35px;
+        
+        
+    }
+    .footer-copyright {
+        font-size: @font-size-19px;
+    }
+}
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) { 
+    .footer-bottom {
+        border-top: 1px solid #888888;
+        margin-top: 0;
+    }
+    .footer-title {
+        font-size: @font-size-36px;
+        line-height: 14px;
+    }
+    .footer-bottom {
+        &__left {
+            text-align: center;
+            margin-top: 89px;
+        }
+        &__center {
+            text-align: center;
+            margin-top: 65px;
+            .footer-content {
+                top: 116%;
+            }
+        }
+        &__right {
+            text-align: center;
+            margin-top: 70px;
+            margin-bottom: 148px;
+            ul {
+                display: none;
+            }
+        }
+    }
+    .footer-content {
+        font-size: @font-size-32px;
+        text-align: center;
+        position: absolute;
+        bottom: 0;
+        max-width: 600px;
+        left: 50%;
+        transform: translateX(-50%);
+        line-height: 55px;
+        letter-spacing: 0.8px;
+        
+        
+    }
+    .footer-copyright {
+        top: 182%;
+        font-size: @font-size-28px;
+        width: 95%;
+        position: absolute;
+        left: 52%;
+        margin-bottom: -13%;
+        bottom: 0;
+        transform: translateX(-50%);
+        letter-spacing: 0.9px;
+        text-align: center;
+    }
+}
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+    .footer-bottom {
+        display: flex;
+        justify-content: space-between;
+        &__left {
+            width: 30%;
+        }
+        &__center {
+            text-align: center;
+            width: 40%;
+            .footer-content {
+                text-align: center;
+            }
+        }
+        &__right {
+            display: inline-block;
+            text-align: center;
+            width: 30%;
+            .footer-content {
+                ul {
+                    display: inline-block;
+                }
+                ul:nth-child(1) {
+                    float: left;
+                    padding-left: 10%;
+                }
+                ul:nth-child(2) {
+                    float: right;
+                }
+            }
+            
+        }
+    }
+    
+    .footer-title {
+        font-size: @font-size-16px;
+        text-align: center;
+    }
+    .footer-content {
+        font-size: @font-size-16px;
+        text-align: left;
+        line-height: 27px;
+        padding-top: 10px;
+        
+        
+    }
+    .footer-copyright {
+        font-size: @font-size-16px;
+        margin-top: -7%;
+        max-width: 200px;
+        line-height: 24px;
+        text-align: left;
+    }
+}
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__l) {
+    .footer-bottom {
+        &__right {
+            .footer-content {
+                ul:nth-child(1) {
+                    padding-left: 0;
+                }
+            }
+            
+        }
+    }
+    
+    .footer-copyright {
+        font-size: @font-size-16px;
+        margin-top: -2.7%;
+        max-width: unset;
+        line-height: unset;
+    }
+    
+}
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__xl) {
+    .footer-bottom {
+       
+        &__left {
+            padding-left: 1%;
+        }
+        &__center {
+            padding-left: 3%;
+            .footer-content {
+                padding-left: 19%;
+                text-align: left;
+            }
+        }
+        &__right {
+            padding-left: 6%;
+            .footer-content {
+                padding-left: 16%;
+               
+                ul:nth-child(1) {
+                    padding-right: 23%;
+                    
+                }
+                ul:nth-child(2) {
+                    float: unset;
+                }
+            }
+            
+        }
+    }
+    .footer-copyright {
+        margin-top: -1.8%;
+        margin-left: 0.5%;
+    }
+}

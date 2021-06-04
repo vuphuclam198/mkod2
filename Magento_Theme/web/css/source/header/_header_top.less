@@ -1,0 +1,91 @@
+& when (@media-common = true) {
+    // .page-header {
+    //     .header.panel {
+    //         font-size: @font-size-16px;
+    //         font-family: @font-family__fugue;
+    //         display: flex;
+    //         justify-content: space-between;
+    //         &::before {
+    //             content: none;
+    //         }
+    //     }
+
+    // }
+    
+    //top
+    .header-top {
+        
+
+        a&__left {
+            color: @color-090909;
+            letter-spacing: -1px;
+            word-spacing: 2px;
+            &:hover {
+                color:#ff87c5;
+            }
+        }
+        a&__center {
+            color: @color-242424;
+            &:hover {
+                color:#ff87c5;
+            }
+        }
+        a&__right {
+            letter-spacing: -0.3px;
+            word-spacing: -2px;
+            color: @color-232323;
+            &:hover {
+                color:#ff87c5;
+            }
+        }
+    }
+
+    .counter-label {
+        display: none;
+    }
+    
+}
+
+// .page-header {
+//     .panel.wrapper {
+//         border-bottom: 1px solid @color-e0e0e0;
+//     }
+// }
+
+//responsive
+// .media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+//     .page-header .panel.wrapper {
+//         display: none;
+//     }
+// }
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+    // .page-header {
+    //     .header.panel {
+    //         padding-top: 13px;
+    //         padding-bottom: 10px;
+    //         line-height: 14px;
+    //         &::before {
+    //             content: none;
+    //         }
+    //         &::after {
+    //             content: none;
+    //         }
+            
+    //     }
+
+    // }
+}
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__xl) {
+    .header-top {
+        &__left {
+            padding-left: 8.5%;
+        }
+        &__center {
+            padding-left: 2.5%;
+            
+        }
+        &__right {
+            padding-right: 7.5%;
+        }
+    }
+}

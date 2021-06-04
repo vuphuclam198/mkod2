@@ -1,0 +1,55 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+/** @var \Magento\Newsletter\Block\Subscribe $block */
+?>
+<div class="block newsletter">
+    <div class="title"><strong><?= $block->escapeHtml(__('Newsletter')) ?></strong></div>
+    <div class="content">
+        <form class="form subscribe"
+            novalidate
+            action="<?= $block->escapeUrl($block->getFormActionUrl()) ?>"
+            method="post"
+            data-mage-init='{"validation": {"errorClass": "mage-error"}}'
+            id="newsletter-validate-detail">
+            <div class="field newsletter">
+                <div class="control">
+                    <label for="newsletter">
+                        
+                        <input name="email" type="email" id="newsletter"
+                               placeholder="<?= $block->escapeHtmlAttr(__('SIGN UP TO OUR NEWSLETTER')) ?>"
+                               data-mage-init='{"mage/trim-input":{}}'
+                               data-validate="{required:true, 'validate-email':true}"
+                        />
+                    </label>
+                </div>
+            </div>
+            <div class="actions">
+                <button class="action subscribe primary"
+                        title="<?= $block->escapeHtmlAttr(__('SIGN UP')) ?>"
+                        type="submit"
+                        aria-label="Subscribe">
+                    <span><?= $block->escapeHtml(__('SIGN UP')) ?></span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+<script>
+    require(['jquery', 'jquery/ui'], function($){ 
+        $( document ).ready(function() {
+            var $window = $(window);
+            var windowsize = $window.width();
+            var pathname = window.location.pathname;
+            if(pathname!='/mkod/' && windowsize < 768)
+            {
+                $( ".newsletter" ).hide();
+            }
+        });
+    });
+   
+    
+</script>

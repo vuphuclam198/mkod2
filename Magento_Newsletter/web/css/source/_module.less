@@ -1,0 +1,225 @@
+// /**
+//  * Copyright © Magento, Inc. All rights reserved.
+//  * See COPYING.txt for license details.
+//  */
+
+//
+//  Common
+//  _____________________________________________
+
+& when (@media-common = true) {
+
+    //  Newsletter subscription
+    .block.newsletter {
+        margin-bottom: @indent__xl;
+
+        .form.subscribe {
+            display: table;
+            width: 100%;
+        }
+
+        .fieldset {
+            display: table-cell;
+            margin: 0;
+            padding: 0;
+            vertical-align: top;
+        }
+
+        .field {
+            margin: 0;
+
+            .control {
+                .lib-icon-font(
+                @icon-envelope,
+                @_icon-font-size: 35px,
+                @_icon-font-line-height: 33px,
+                @_icon-font-color: @form-element-input-placeholder__color
+                );
+                display: block;
+
+                &:before {
+                    content: none;
+                    position: absolute;
+                }
+            }
+        }
+
+        input {
+            margin-right: 35px;
+            padding: unset;
+            // padding: 0 0 0 35px; // Reset some default Safari padding values.
+            border: none;
+            &::placeholder {
+                font-size: @font-size-14px;
+                line-height: 48px;
+                color: @color__title__product;
+                font-family: @font-family__fugue;
+            }
+        }
+
+        .title {
+            display: none;
+        }
+
+        .label {
+            &:extend(.abs-visually-hidden all);
+        }
+
+        .actions {
+            display: table-cell;
+            vertical-align: top;
+        }
+
+        .action.subscribe {
+            border-bottom-left-radius: 0;
+            border-top-left-radius: 0;
+            margin-left: -1px;
+            color: @color-white;
+            font-family: @font-family__fugue;
+            border: none;
+        }
+    }
+}
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__xs) {
+    
+    //form
+    .block.newsletter {
+        
+        input {
+            margin-right: -90px;
+            font-family: @font-family__fugue;
+            &::placeholder {
+                font-size: @font-size-11px;
+            }
+        }
+        
+        
+        .actions {
+            left: 81%;
+            transform: translateX(-50%);
+        }
+        .action.subscribe {
+            font-size: @font-size-8px;
+            padding: 10px 15px;
+        }
+    }
+
+}
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__s) {
+    
+    //form
+    .block.newsletter {
+        
+        input {
+            margin-right: 66px;
+            font-size: @font-size-19px;
+            
+            &::placeholder {
+                font-size: @font-size-15px;
+                line-height: 68px;
+            }
+        }
+        .field {
+            // margin-right: 15px;
+            left: 35.5%;
+            transform: translateX(-50%);
+            line-height: 48px;
+        }
+        
+        .actions {
+            left: 81%;
+            transform: translateX(-50%);
+        }
+        .action.subscribe {
+            margin-top: 10%;
+            font-size: @font-size-15px;
+            padding: 10px 15px;
+        }
+    }
+
+}
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+    
+    //form
+    .block.newsletter {
+        .form.subscribe {
+            position: relative;
+        }
+        input {
+            border: none;
+            margin-right: 82px;
+            font-size: @font-size-19px;
+            line-height: 68px;
+            
+            font-family: @font-family__fugue;
+            &::placeholder {
+                color: @color__title__product;
+                font-size: @font-size-19px;
+                line-height: 68px;
+                letter-spacing: -0.7px;
+                font-family: @font-family__fugue;
+            }
+        }
+        .field {
+            // margin-right: 15px;
+            left: 42.5%;
+            transform: translateX(-50%);
+            position: absolute;
+            line-height: 48px;
+            .control:before {
+                content: none;
+            }
+        }
+        
+        .actions {
+            position: absolute;
+            left: 73%;
+            transform: translateX(-50%);
+        }
+        .action.subscribe {
+            font-size: @font-size-19px;
+            padding: 17px 27px 12px 27px;
+            letter-spacing: -1px;
+        }
+    }
+
+}
+//
+//  Desktop
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+    .block.newsletter {
+        max-width: 44%;
+        width: max-content;
+        display: inline-block;
+        margin-right: 1%;
+        margin-top: 1%;
+        margin-bottom: 35px;
+        input {
+            margin-right: 65px;
+            
+        }
+        .field {
+            margin-right: 15px;
+
+            .control {
+                width: 100%;
+                &:before {
+                    content: none;
+                }
+            }
+        }
+
+        .action.subscribe {
+            border-radius: 3px;
+            font-size: @font-size-14px;
+            color: @color-white;
+            font-family: @font-family__fugue;
+            padding: 8px 18px;
+            letter-spacing: -1px;
+            word-spacing: 3px;
+        }
+    }
+}
+

@@ -1,0 +1,150 @@
+// /**
+//  * Copyright © Magento, Inc. All rights reserved.
+//  * See COPYING.txt for license details.
+//  */
+
+//
+//  Common
+//  _____________________________________________
+
+& when (@media-common = true) {
+    .product.data.items {
+        
+        .lib-data-accordion();
+        margin-bottom: 0;
+        border-bottom: 1px solid @color-0d0d0d;
+        position: relative;
+
+        .item.title {
+            position: relative;
+
+            &:before {
+                content: '\e622';
+                color: @color-0d0d0d;
+                font-family: 'icons-blank-theme';
+                font-size: 36px;
+                position: absolute;
+                top: 50%;
+                .transform(translateY(-50%));
+            }
+        }
+
+        .item.title > .switch {
+            text-transform: uppercase;
+            background: none;
+        }
+
+        &.allow{
+            border-bottom: 1px solid @color-0d0d0d;
+            .item.title { 
+                border-bottom: 1px solid @color-0d0d0d;
+                
+                &:before {
+                content: '\e622';
+                .transform(rotateX(180deg) translateY(50%));
+                transition: all 1s linear;
+                }
+            }
+        }
+
+        .item.title {
+            float: none;
+        }
+    }
+}
+//
+//  Desktop
+//  _____________________________________________
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__xl) {
+    .product.data.items {
+
+        .item.content {
+            padding: 24px 2px 53px 2px;
+        }
+
+        &[aria-controls='description'] {
+            .item.title {
+                &:before {
+                    left: 21.5%;
+                }
+            }
+        }
+
+            
+        .item.title:before {
+            left: 13.5%;    
+        }
+    }
+}
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+    .product.data.items {
+        .lib-data-tabs();
+
+        .item.title {
+            float: none;
+
+            &:before {
+                left: 90%;
+            }   
+        }
+
+        .item.title > .switch {
+            background: none;
+            border: none;
+            display: inline-block;
+            padding: 15px 0 17px 0;
+        }
+
+        .item.content {
+            border: none;   
+            float: none;
+            margin-left: 0;
+            padding: 10px 2px 30px 0px;
+            line-height: 30px;
+            margin-bottom: 0;
+        } 
+    }
+}
+
+//
+//  Mobile
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+    .product.data.items {
+        .lib-data-accordion();
+
+        .data.item {
+            display: block;
+            margin: 0 0 6px;
+        }
+
+        .item.title {
+            > .switch {
+                background: none;
+                border: none;
+                padding: 5px 0 1px 0;
+                font-size: 16px;
+                letter-spacing: .1px;
+                line-height: 43px;
+                text-align: left;
+            }
+        }
+
+        > .item.content {
+            padding: 10px 15px 30px;
+            border: none;
+        }
+    }
+
+    .product.data.items .item.title:before {
+        content: '\002b';
+        font-size: 20px;
+        left: 96%;
+    }
+
+    .product.data.items:nth-child(1) {
+        display: none;
+    }
+}

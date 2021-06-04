@@ -1,0 +1,71 @@
+<div class="featured-products">
+    <div class="block-title">
+        <strong>featured products</strong>
+    </div>
+    <div class="featured-items" id="featured-items">
+        <?=
+            $block->getLayout()
+            ->createBlock('Magento\Cms\Block\Block')
+            ->setBlockId('featured-products')
+            ->toHtml();
+        ?>
+    </div>
+</div>
+<!-- <script>
+    require(['jquery', 'jquery/ui'], function($){ 
+        $( document ).ready(function() {
+            var $window = $(window);
+            var windowsize = $window.width();
+            alert(windowsize);
+            // if (windowsize < 768) {
+            //     require([
+            //         'jquery',
+            //         'slick',
+            //         'domReady!'
+            //     ], function ($) {
+            //         $(".featured-items").slick({
+            //             dots: false,
+            //             infinite: true,
+            //             speed: 300,
+            //             slidesToShow: 1,
+            //             slidesToScroll: 1,
+                        
+            //         });
+                    
+            //     });
+            // }
+        });
+    });
+   
+    
+</script> -->
+<script>
+    require([
+        'jquery',
+        'slick',
+        'domReady!'
+    ], function ($) {
+
+        $(".featured-items").slick({
+            dots: false,
+            infinite: true,
+            speed: 300,
+            slidesToShow: 3,
+            slidesToScroll: 1,
+            responsive: [
+                             
+                           
+                           
+                            {
+                                breakpoint: 768,
+                                settings: {
+                                    slidesToShow: 1,
+                                }
+                            }
+
+                            
+                        ]
+        });
+        
+    });
+</script>
