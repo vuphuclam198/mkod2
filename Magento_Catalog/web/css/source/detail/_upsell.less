@@ -1,0 +1,43 @@
+& when (@media-common = true) {
+    .block.upsell {
+        margin-bottom: 20px;
+        .block-title {
+            padding: 35px 0px 21px 0;
+        }
+    }
+}
+
+@media only screen and(max-width: @screen__m) {
+    .block.upsell {
+        .block-title {
+            padding: 5px 0 17px 0;
+
+            strong {
+                display: none;
+            }
+
+            &:before {
+                content: 'Complete Your Look';
+                font-size: 20px;
+                text-transform: uppercase;
+            }
+        }
+
+        .block-content.content {
+            padding: 0 50px;
+        }
+        
+        .slick-prev, .slick-next {
+            top: 36%;
+        }
+
+        .slick-prev {
+            left: -11%;
+        }
+
+        .slick-next {
+            left: 105%;
+        }
+    }
+
+}

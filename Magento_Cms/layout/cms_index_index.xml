@@ -6,17 +6,19 @@
  */
 -->
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
         <!-- banner -->
         <referenceContainer name = "page.wrapper">
             <container name = "banner.container" htmlTag = "div" htmlClass="banner" before="main.content">
                 <block class= "Magento\Framework\View\Element\Template" name ="banner" template = "Magento_Cms::banner.phtml" />
             </container>
         </referenceContainer>
-        <referenceContainer name="main.content">
-                <block class= "Magento\Framework\View\Element\Template" name ="featured.products" template = "Magento_Cms::featured_products.phtml" />
-                <block class= "Magento\Framework\View\Element\Template" name ="trending" template = "Magento_Cms::trending.phtml" />
+        <referenceContainer name="main">
+                <!-- <block class= "Magento\Framework\View\Element\Template" name ="featured.products" template = "Magento_Cms::featured_products.phtml" /> -->
+                <!-- <block class= "Magento\Framework\View\Element\Template" name ="trending" template = "Magento_Cms::trending.phtml" /> -->
         </referenceContainer>
 
         <!-- remove maincontent -->
-        <referenceContainer name="main" remove="true"/>
+        <!-- <referenceContainer name="main" remove="true"/> -->
+    </body>
 </page>

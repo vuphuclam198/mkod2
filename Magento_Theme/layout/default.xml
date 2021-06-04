@@ -14,7 +14,7 @@
         <referenceBlock name="footer_links" remove="true"/>
         <referenceBlock name="copyright" remove="true"/>
         <referenceBlock name="report.bugs" remove="true"/>
-        
+        <referenceBlock name="header.links" remove="true"/>
         
         <referenceContainer name="header-wrapper">
             <container name="header-center-right" htmlTag="div" htmlClass="header-center-right" after="-">

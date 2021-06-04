@@ -21,6 +21,10 @@ use Magento\Framework\App\Action\Action;
     $showCart = true;
     $templateType = \Magento\Catalog\Block\Product\ReviewRendererInterface::SHORT_VIEW;
     $description = false;
+    $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+    $formKey = $objectManager->get('Magento\Framework\Data\Form\FormKey');
+    // var_dump($formKey->getFormKey());
+    // die();
     ?>
     <div class="block widget block-products-list <?= /* @noEscape */ $mode ?>">
         <?php if ($block->getTitle()) : ?>
@@ -69,7 +73,8 @@ use Magento\Framework\App\Action\Action;
                                                             <input type="hidden" name="product" value="<?= $block->escapeHtmlAttr($postParams['data']['product']) ?>">
                                                             <input type="hidden" name="<?= /* @noEscape */ Action::PARAM_NAME_URL_ENCODED ?>" value="<?= /* @noEscape */ $postParams['data'][Action::PARAM_NAME_URL_ENCODED] ?>">
                                                             <?= $block->getBlockHtml('formkey') ?>
-                                                            <input name="form_key" type="hidden" value="<?php echo $block->getFormKey();?>">
+                                                            <!-- <input name="form_key" type="hidden" value="<?php echo $block->getFormKey();?>"> -->
+                                                            <!-- <input name="form_key" type="hidden" value="<?php echo $formKey->getFormKey();?>"> -->
                                                             <button type="submit"
                                                                     title="<?= $block->escapeHtmlAttr(__('Add to Cart')) ?>"
                                                                     class="action tocart primary">

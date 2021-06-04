@@ -1,0 +1,80 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page layout="1column" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <css src="mage/gallery/gallery.css"/>
+    </head>
+    <update handle="catalog_product_opengraph" />
+    <update handle="page_calendar"/>
+    <body>
+
+        <referenceContainer name="main.content">
+            <container name="page.top.breadcrumbs.crossbar" htmlTag="div" htmlClass="breadcrumbs-crossbar" before="-">
+                    <block class="Magento\Framework\View\Element\Template" name="products.crossbar.info" after="-" template="Magento_Catalog::crossbar_info.phtml" /> 
+            </container>
+
+        </referenceContainer>
+           
+        <referenceContainer name="product.info.social" remove="true" />
+
+        <referenceContainer name="content">
+            <referenceContainer name="product.info.media">
+                <referenceContainer name="skip_gallery_before.wrapper" remove="true" />
+                <referenceContainer name="skip_gallery_after.wrapper" remove="true" />
+            </referenceContainer>
+
+            <referenceContainer name="product.info.main">
+                <referenceContainer name="product.info.price">
+                    <referenceBlock name="product.info.review" remove="true" />
+                    <referenceBlock name="product.price.final"  />
+                    <container name="product.info.stock" after="-"/>
+                </referenceContainer>
+
+                <block class="Magento\Framework\View\Element\Template" name="product.info.social.link" template="Magento_Catalog::social_link.phtml" after="-" /> 
+               
+                <block class="Magento\Catalog\Block\Product\View" name="product.info.info" template="Magento_Catalog::product_info.phtml" group="detailed_info">
+                    <arguments>
+                        <argument name="title" translate="true" xsi:type="string"></argument>
+                        <argument name="sort_order" xsi:type="string">11</argument>
+                    </arguments>
+                </block>
+                <referenceBlock name="product.info.details">
+                    <referenceBlock name="product.attributes" remove="true"/>
+                    <referenceBlock name="product.info.description">
+                        <arguments>
+                            <argument name="title" translate="true" xsi:type="string">Product info</argument>
+                        </arguments>
+                    </referenceBlock>
+
+                    <block class="Magento\Catalog\Block\Product\View" name="product.info.delivery" template="Magento_Catalog::delivery.phtml" group="detailed_info">
+                        <arguments>
+                            <argument name="title" translate="true" xsi:type="string"> DELIVERY</argument>
+                            <argument name="sort_order" xsi:type="string">12</argument>
+                        </arguments>
+                    </block>
+
+                    <block class="Magento\Catalog\Block\Product\View" name="product.info.return" template="Magento_Catalog::return.phtml" group="detailed_info">
+                        <arguments>
+                            <argument name="title" translate="true" xsi:type="string">Return</argument>
+                            <argument name="sort_order" xsi:type="string">13</argument>
+                        </arguments>
+                    </block>
+                </referenceBlock>
+            </referenceContainer>
+        </referenceContainer>
+
+        <move element="product.info.media" destination="content" before="-"/>
+        <move element="breadcrumbs" destination="page.top.breadcrumbs.crossbar" before="-" />
+        <move element="page.main.title" destination="product.info.price" before="-" />
+        <move element="product.info.type" destination="product.info.stock" before="-" />
+        <move element="product.info" destination="product.info.price" after="-" />
+        <move element="product.info.details" destination="product.info.main" before="product.info.social.link" />
+        <move element="catalog.product.related" destination="main.content" after="-"/>
+        <move element="product.info.upsell" destination="main.content" after="-"/>
+    </body>
+</page>

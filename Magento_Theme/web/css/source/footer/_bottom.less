@@ -159,19 +159,35 @@
         display: flex;
         justify-content: space-between;
         &__left {
+            width: 30%;
         }
         &__center {
             text-align: center;
-            padding-left: 12%;
+            width: 40%;
+            .footer-content {
+                text-align: center;
+            }
         }
         &__right {
             display: inline-block;
             text-align: center;
-            ul {
-                display: inline-block;
+            width: 30%;
+            .footer-content {
+                ul {
+                    display: inline-block;
+                }
+                ul:nth-child(1) {
+                    float: left;
+                    padding-left: 10%;
+                }
+                ul:nth-child(2) {
+                    float: right;
+                }
             }
+            
         }
     }
+    
     .footer-title {
         font-size: @font-size-16px;
         text-align: center;
@@ -181,10 +197,6 @@
         text-align: left;
         line-height: 27px;
         padding-top: 10px;
-        ul:nth-child(1) {
-            padding-right: 68px;
-            
-        }
         
         
     }
@@ -198,15 +210,12 @@
 }
 .media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__l) {
     .footer-bottom {
-        
-        &__left {
-            padding-left: 1%;
-        }
-        &__center {
-            padding-left: 11%;
-        }
         &__right {
-            padding-right: 5%;
+            .footer-content {
+                ul:nth-child(1) {
+                    padding-left: 0;
+                }
+            }
             
         }
     }
@@ -214,17 +223,42 @@
     .footer-copyright {
         font-size: @font-size-16px;
         margin-top: -2.7%;
-        margin-left: 1%;
         max-width: unset;
         line-height: unset;
     }
-    .footer-copyright {
-        margin-left: 0.5%;
-    }
+    
 }
 .media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__xl) {
-    
+    .footer-bottom {
+       
+        &__left {
+            padding-left: 1%;
+        }
+        &__center {
+            padding-left: 3%;
+            .footer-content {
+                padding-left: 19%;
+                text-align: left;
+            }
+        }
+        &__right {
+            padding-left: 6%;
+            .footer-content {
+                padding-left: 16%;
+               
+                ul:nth-child(1) {
+                    padding-right: 23%;
+                    
+                }
+                ul:nth-child(2) {
+                    float: unset;
+                }
+            }
+            
+        }
+    }
     .footer-copyright {
         margin-top: -1.8%;
+        margin-left: 0.5%;
     }
 }
