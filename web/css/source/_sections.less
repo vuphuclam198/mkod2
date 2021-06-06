@@ -12,11 +12,11 @@
         
         .lib-data-accordion();
         margin-bottom: 0;
-        border-bottom: 1px solid @color-0d0d0d;
         position: relative;
 
         .item.title {
             position: relative;
+            border-bottom: 1px solid @color-0d0d0d;
 
             &:before {
                 content: '\e622';
@@ -27,24 +27,24 @@
                 top: 50%;
                 .transform(translateY(-50%));
             }
+
+            &[aria-selected="true"]{
+                // border-bottom: 1px solid @color-0d0d0d;
+                // .item.title { 
+                    border-bottom: 1px solid @color-0d0d0d;
+                    
+                    &:before {
+                    content: '\e622';
+                    .transform(rotateX(180deg) translateY(50%));
+                    transition: all 1s linear;
+                    }
+                // }s
+            }
         }
 
         .item.title > .switch {
             text-transform: uppercase;
             background: none;
-        }
-
-        &.allow{
-            border-bottom: 1px solid @color-0d0d0d;
-            .item.title { 
-                border-bottom: 1px solid @color-0d0d0d;
-                
-                &:before {
-                content: '\e622';
-                .transform(rotateX(180deg) translateY(50%));
-                transition: all 1s linear;
-                }
-            }
         }
 
         .item.title {
@@ -62,10 +62,11 @@
             padding: 24px 2px 53px 2px;
         }
 
-        &[aria-controls='description'] {
-            .item.title {
+        .item.title {
+            &[aria-controls='description'] {
+
                 &:before {
-                    left: 21.5%;
+                    left: 22%;
                 }
             }
         }
@@ -98,6 +99,7 @@
 
         .item.content {
             border: none;   
+            border-bottom: 1px solid @color-gray62;
             float: none;
             margin-left: 0;
             padding: 10px 2px 30px 0px;
