@@ -7,7 +7,7 @@
         letter-spacing: 1px;
         color: @color-e0e0e0;
         font-family: @font-family__fugue;
-        display: inline-block;
+        
         float: right;
        
         a&__phone {
@@ -32,85 +32,33 @@
     
     
 }
-.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__xs) {
-    // .nav-toggle { 
-    //     padding: 0;
-        
-    // }
-    
-    //search
-    // .block-search {
-    //     margin-top: 7%;
-    //     margin-left: 6%;
-    // }
-    
-    //logo
-    // .logo {
-    //     margin: unset;
-    //     margin-left: 15%;
-    //     margin-top: 10px;
-    // }
 
-    //right 
-    .header-center-right {
-        margin-top: 2%;
-    }
-    
-}
-.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__s) {
-    
-    //search
-    // .block-search {
-    //     margin-top: 9%;
-    //     margin-left: 6%;
-    // }
-    
-    //logo
-    // .logo {
-    //     margin: unset;
-    //     margin-left: 20%;
-    //     margin-top: 20px;
-    // }
 
-    //right 
-    .header-center-right {
-        // padding-top: 14px;
-        margin-right: 1.7%;
-        margin-top: 5.6%;
-        &__phone {
-            display: none;
-        }
-        &__account {
-            display: none;
-        }
-    }
-    
-}
 .media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
 
     //right 
     .header-center-right {
-        margin-right: 2%;
-        margin-top: 5.6%;
-        &__phone {
-            display: none;
-        }
-        &__account {
-            display: none;
-        }
+       display: none;
     }
   
 }
 .media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
 
-    //right 
+    //right
+    .la, .las {
+        font-size: 21px;
+    }
     .header-center-right {
+        display: inline-block;
         font-size: @font-size-11px;
-        padding-top: 45px;
+        padding-top: 7%;
+       
         &__phone {
+            padding-right: 5px;
             display: inline-block;
         }
         &__account {
+            padding-right: 5px;
             display: inline-block;
         }
     }
@@ -123,22 +71,26 @@
     //right 
     .header-center-right {
         font-size: @font-size-14px;
-        padding-top: 14px;
-        margin-top: 36px;
+        padding-top: 5%;
+        &__phone {
+            padding-right: 10px;
+        }
+        &__account {
+            padding-right: 10px;
+        }
     }
 }
 .media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__xl) {
    
     //right 
     .header-center-right {
-        padding-top: 14px;
+        padding-top: 1%;
         margin-top: unset;
-        margin-right: 0.8%;
         &__phone {
-            padding-right: 32px;
+            padding-right: 35px;
         }
         &__account {
-            padding-right: 24px;
+            padding-right: 35px;
         }
     }
 }

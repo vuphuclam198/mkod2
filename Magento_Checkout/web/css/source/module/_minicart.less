@@ -174,7 +174,7 @@
                 }
 
                 .counter.qty {
-                    .lib-css(background, @active__color);
+                    .lib-css(background, #ff87c5);
                     .lib-css(color, @page__background-color);
                     .lib-css(height, @minicart-qty__height);
                     .lib-css(line-height, @minicart-qty__height);
@@ -207,6 +207,21 @@
         .minicart-widgets {
             margin-top: 15px;
         }
+        .action.showcart {
+            color: @color-0e0e0e;
+            &:before {
+                // font-size: unset;
+                // content: url(../image/bag_mobile.png);
+                content: "\f290";
+                font-family: "Line Awesome Free";
+                font-weight: 900;
+            }
+            &.active:before {
+                content: "\f290";
+                font-family: "Line Awesome Free";
+                font-weight: 900;
+            }
+        }
     }
 
     .minicart-items-wrapper {
@@ -220,7 +235,7 @@
 
     .minicart-items {
         .lib-list-reset-styles();
-
+        
         .product-item {
             padding: @indent__base 0;
 
@@ -292,7 +307,7 @@
             margin: 0 0 @indent__s;
 
             a {
-                .lib-css(color, @link__color);
+                .lib-css(color, @color-black_dark);
             }
         }
 
@@ -378,6 +393,10 @@
                     @_icon-font-content: @icon-trash
                 );
             }
+            
+        }
+        .action .viewcart {
+            .lib-css(color, @color-black_dark);
         }
     }
 }
@@ -387,14 +406,24 @@
 //  _____________________________________________
 
 .media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__xs) {
-    .minicart-wrapper .block-minicart {
-        width: 290px;
+    .minicart-wrapper {
+        padding-top: 2%;
+        .block-minicart {
+            width: 290px;
+        }
+        .action.showcart {
+            .counter.qty {
+                min-width: 9px;
+            }
+        }
     }
+    
 }
 
 .media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__s) {
     .minicart-wrapper {
-        margin-top: @indent__s;
+        padding-top: 7%;
+        padding-right: 0;
         .lib-clearfix();
         .product {
             .actions {
@@ -409,18 +438,9 @@
 }
 .media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
     .minicart-wrapper {
-        display: inline-block;
-        .action.showcart {
-            color: @color-0e0e0e;
-            &:before {
-                font-size: unset;
-                content: url(../image/bag_mobile.png);
-            }
-            &.active:before {
-                font-size: unset;
-                content: url(../image/bag_mobile.png);
-            }
-        }
+        padding-top: 5.5%;
+        padding-right: 2%;
+        
 
        
     }
@@ -432,17 +452,14 @@
 
 .media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
     .minicart-wrapper {
-        margin-left: 13px;
-        display: inline-block;
+        padding-top: 6.8%;
         .action.showcart {
             color: @color-0e0e0e;
             &:before {
-                font-size: unset;
-                content: url(../image/bag.png);
+                font-size: 21px;
             }
             &.active:before {
-                font-size: unset;
-                content: url(../image/bag.png);
+                font-size: 21px;
             }
             .text {
                 line-height: 32px;
@@ -461,9 +478,20 @@
         }
     }
 }
-
 .media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__l) {
     .minicart-wrapper {
+        padding-top: 4.8%;
+        .action.showcart {
+            .text {
+                font-size: @font-size-14px;
+            }
+        }
+    }
+}
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__xl) {
+    .minicart-wrapper {
+        padding-top: 0.8%;
+        padding-right: 1%;
         .action.showcart {
             .text {
                 font-size: @font-size-14px;

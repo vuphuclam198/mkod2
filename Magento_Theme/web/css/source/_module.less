@@ -320,14 +320,14 @@
 .media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__xs) {
     .logo {
         margin-left: 15%;
-        margin-top: 10px;
+        margin-top: 0;
 
     }
 }
 .media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__s) {
     .logo {
-        margin-left: 20%;
-        margin-top: 20px;
+        margin-left: 17%;
+        margin-top: 3%;
 
     }
 }
@@ -387,16 +387,16 @@
         }
 
         &.content {
-            display: flex;
-            justify-content: space-between;
-            padding: 10px 20px 0;
+            // display: flex;
+            // justify-content: space-between;
+            padding: 10px 20px 63px;
             &:extend(.abs-add-clearfix-desktop all);
-            &::before {
-                content: none;
-            }
-            &::after {
-                content: none;
-            }
+            // &::before {
+            //     content: none;
+            // }
+            // &::after {
+            //     content: none;
+            // }
         }
     }
 
@@ -440,9 +440,11 @@
     }
 
     .logo {
-        margin-left: -17%;
+        position: absolute;
+        left: 17%;
 
         img {
+            width: 90%;
             max-height: inherit;
         }
     }
@@ -475,9 +477,17 @@
         margin-top: -3px;
     }
 }
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__l) { 
+    .logo {
+        left: 28%;
+        img {
+            width: 100%;
+        }
+    }
+}
 .media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__xl) { 
     .logo {
-        margin-left: -2%;
+        left: 31%;
     }
     .footer {
         &.content {

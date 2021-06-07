@@ -75,7 +75,6 @@
             left: -300%;
             margin: 15px 0;
             position: absolute;
-            max-width: 60%;
         }
 
         .nested {
@@ -192,8 +191,7 @@
 
 .media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__xs) {
     .block-search {
-        margin-top: 7%;
-        margin-left: 6%;
+        padding-top: 2%;
         .block-content {
             margin-bottom: 0;
         }
@@ -201,29 +199,19 @@
             &:before {
                 font-size: 35px;
                 line-height: 33px;
+                margin-right: 3px;
             }
-            &.active {
-                + .control {
-                    input {
-                        top: -39%;
-                    }
-                }
-            }
+            
         }
     }
 }
 
 .media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__s) {
     .block-search {
-        margin-top: 9%;
-        margin-left: 6%;
+        padding-top: 7%;
         .label {
-            &.active {
-                + .control {
-                    input {
-                        top: -27%;
-                    }
-                }
+            &:before {
+                margin-right: 15px;
             }
         }
     }
@@ -231,31 +219,16 @@
 .media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
     //search
     .block-search {
-        margin-top: 6.5%;
-        margin-left: 5%;
-        display: inline-block;
+        padding-top: 5%;
         .control {
             border-top: unset;
         }
         .label {
             &:before {
-                font-size: 52px;
-                line-height: 33px;
+                font-size: 55px;
+                line-height: 43px;
+                margin-right: 36px;
             }
-            &.active {
-                + .control {
-                    input {
-                        position: absolute;
-                        left: 50%;
-                        max-width: 100%;
-                        top: -23%;
-                        border: none;
-                        transform: translateY(50%);
-                        transition: transform .5s;
-                    }
-                }
-            }
-            
         }
     }
 }
@@ -265,7 +238,7 @@
 
 .media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
     .block-search {
-        float: right;
+        float: left;
         
         position: relative;
         width: 250px;
@@ -296,6 +269,7 @@
             padding-right: 35px;
             position: static;
             border: unset;
+            max-width: 60%;
         }
 
         .action.search {
