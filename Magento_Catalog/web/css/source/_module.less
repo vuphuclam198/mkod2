@@ -553,9 +553,39 @@
 
 //
 //  Mobile
-//  _____________________________________________
+//  _________________________________
+@media only screen and (max-width: @screen__xs) {
+    .product-info-main {
+        .price-box {
+            margin-left: 0;
+        }
 
+        .product.attribute.sku {
+            margin-left: 0;
+        }
+
+        .stock.available, .stock.unavailable {
+            margin-left: 0;
+        }
+    }
+
+    .product-add-form {
+        max-width: 300px;
+        margin: 0 auto;
+    }
+}
+____________
+.product-item-actions a , .product-item .tocart {
+    &:hover {
+        text-decoration: underline;
+    }
+}
 .media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+
+    .product-add-form {
+        margin-top: 11px;
+    }
+
     .catalog-product-view {
         .column.main {
             .lib-vendor-prefix-display(flex);
