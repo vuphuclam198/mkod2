@@ -10,6 +10,6 @@
     <head>
         <css src="https://use.fontawesome.com/releases/v5.7.1/css/all.css" src_type="url"/>
         <script src="../web/js/main.js" />
-        <!-- <css src="../web/css/line-awesome/line-awesome.css" /> -->
+        <css src="../web/css/line-awesome/line-awesome.css" />
     </head>
 </page>

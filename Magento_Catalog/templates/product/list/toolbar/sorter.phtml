@@ -13,11 +13,13 @@
 ?>
 <div class="toolbar-sorter sorter">
     <button type="button" class="btn btn_sorter sorter-label">
-        <?= $block->escapeHtml(__('sort')) ?>            
-        <div class="icon">
-            <i class="icon-plus fas fa-plus"></i>
-            <i class="icon-minus fas fa-minus"></i>
-        </div>
+        <span>
+            <?= $block->escapeHtml(__('sort')) ?>            
+            <div class="icon">
+                <i class="icon-plus fas fa-plus"></i>
+                <i class="icon-minus fas fa-minus"></i>
+            </div>
+        </span>
     </button>
 
     <div class="sort_content">
@@ -56,7 +58,8 @@
     require(['jquery', 'jquery/ui'], function($){
         $(document).ready(function(){
             $(".btn_sorter").click(function(){
-                $(".sort_content").toggleClass("active");
+                $(".sort_content").addClass("active");
+                $(".filter-content").removeClass("active");
             });
         });
     });
