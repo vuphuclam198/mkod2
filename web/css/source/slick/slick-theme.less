@@ -173,8 +173,12 @@
 }
 .media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__xs) {
     .widget-product-grid {
+        .slick-prev,
         .slick-next {
-            right: 20px;
+            top: 23%;
+        }
+        .slick-next {
+            right: 30px;
             
         }
         .slick-prev {
@@ -199,14 +203,14 @@
     .widget-product-grid {
         .slick-prev,
         .slick-next {
-            top: 33%;
+            top: 31%;
         }
         .slick-next {
-            right: 59px;
+            right: 60px;
             
         }
         .slick-prev {
-            left: 25px;
+            left: 20px;
             
         }
     }
@@ -218,7 +222,7 @@
             top: 32%;
         }
         .slick-next {
-            right: -3px;
+            right: 0;
             &:before {
                 content: url(../image/nextDesk.png);
             }
@@ -238,15 +242,26 @@
 .media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__l) {
     .widget-product-grid {
         .slick-next {
-            right: -3px;
+            right: -2px;
         }
         .slick-prev {
-            left: -2.5%;
+            left: -3%;
         }
     }
     
 }
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = 1351px) {
+    .widget-product-grid {
+        .slick-next {
+            right: 1%;
+        }
+        .slick-prev {
+            left: -1%;
+        }
+        
+    }
 
+}
 .media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__xl) {
     .widget-product-grid {
         .slick-prev,

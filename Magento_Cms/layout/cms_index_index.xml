@@ -13,12 +13,5 @@
                 <block class= "Magento\Framework\View\Element\Template" name ="banner" template = "Magento_Cms::banner.phtml" />
             </container>
         </referenceContainer>
-        <referenceContainer name="main">
-                <!-- <block class= "Magento\Framework\View\Element\Template" name ="featured.products" template = "Magento_Cms::featured_products.phtml" /> -->
-                <!-- <block class= "Magento\Framework\View\Element\Template" name ="trending" template = "Magento_Cms::trending.phtml" /> -->
-        </referenceContainer>
-
-        <!-- remove maincontent -->
-        <!-- <referenceContainer name="main" remove="true"/> -->
     </body>
 </page>

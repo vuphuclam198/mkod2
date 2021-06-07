@@ -23,6 +23,7 @@
     }
 
     .nav-sections {
+        
         .navigation {
             .level0 > {
                 .level-top {
@@ -65,6 +66,15 @@
 .media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__xs) {
     .nav-toggle { 
         padding: 0;
+        &::before {
+            font-size: 30px;
+        }
+    }
+}
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__s) {
+    
+    .nav-toggle { 
+        padding: 20px 12px;
         
     }
 }
@@ -323,7 +333,7 @@
     .navigation {
         
         li.level0 {
-            padding: 10px 7px;
+            padding: 10px 10px 10px 0;
             margin: unset;
         }
         .level0 > .level-top {
@@ -363,6 +373,13 @@
 
     .nav-sections-item-content {
         > .navigation {
+            box-sizing: border-box;
+            margin-left: auto;
+            margin-right: auto;
+            max-width: @layout__max-width;
+            padding-left: @layout-indent__width;
+            padding-right: @layout-indent__width;
+            width: auto;
             display: block;
             background: unset;
         }
@@ -380,7 +397,7 @@
 .media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__l) {
     .navigation {
         li.level0 {
-            padding: 10px 15px;
+            padding: 15px 30px 15px 0;
         }
         .level0 > .level-top {
             font-size: @font-size-16px;
@@ -395,7 +412,7 @@
     }
     .nav-sections-item-content {
         .navigation ul {
-            padding: 0 0 0 51px;
+            padding: 0 0 0 30px;
         }
     }
 

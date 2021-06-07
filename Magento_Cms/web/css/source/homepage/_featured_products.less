@@ -50,18 +50,19 @@
     
 }
 .media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__xs) {
-    .block-title {
-        font-size: @font-size-25px;
-        line-height: 25px;
-        padding: 20px 0px 35px;
-    }
-    .block-title {
-        strong {
-            font-weight: 400; 
+    
+    .featured-products {
+        .block-title {
+            padding: 20px 0px 20px;
             line-height: 25px; 
-            font-size: @font-size-25px; 
+            strong {
+                font-weight: 400; 
+                line-height: 25px; 
+                font-size: @font-size-25px; 
+            }
         }
     }
+   
     .featured-item {
         img {
             width: 86%;
@@ -163,7 +164,7 @@
     }
     
     .featured-item {
-        padding: 0 20px;
+        padding: 0 15px;
         img {
             // width: 100%;
             height: 100%;
@@ -177,7 +178,7 @@
         }
         &__link {
             width: 100%;
-            top: 70%;
+            top: 65%;
             left: 50%;
             transform: translate(-50%);
             font-size: 24px;
@@ -194,7 +195,7 @@
         
         .featured-item {
             &__title {
-                top: 45.5%;
+                top: 43.5%;
             }
         }
     }
@@ -202,7 +203,7 @@
         
         .featured-item {
             &__title {
-                top: 45.5%;
+                top: 43.5%;
             }
         }
     }
@@ -211,22 +212,25 @@
 .media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__l) {
     
     .featured-item {
-        &__link {
-            top: 60%;
-            font-size: @font-size-30px;
-            line-height: 24px;
-        }
+        padding: 0 20px;
         &__title {
-            top: 38.5%;
+            top: 39.5%;
             font-size: @font-size-48px;
             line-height: 41px;
+            left: 50%;
+        }
+        &__link {
+            top: 63%;
+            left: 50%;
+            font-size: @font-size-30px;
+            line-height: 24px;
         }
     }
     .slick-track div:nth-child(3n+2) {
         
         .featured-item {
             &__title {
-                top: 42.5%;
+                top: 45.5%;
             }
         }
     }
@@ -234,42 +238,50 @@
         
         .featured-item {
             &__title {
-                top: 42.5%;
+                top: 45.5%;
             }
         }
     }
 }
 .media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__xl) {
-    .featured-items {
-        padding-left: 10px;
-        
-    }
+    
     .featured-item {
         padding: 0;
+        &__title {
+            top: 39.5%;
+            left: 47%;
+        }
         &__link {
             top: 57%;
-            left: 49.5%;
+            left: 44.5%;
         }
     }
-    .slick-track div:nth-child(3n+1) {
-        
-        .featured-item {
-            padding-right: 40px;
-        }
-    }
+    
     .slick-track div:nth-child(3n+2) {
         
         .featured-item {
-            padding: 0 23px;
+            padding-left: 20px;
+            &__title {
+                top: 44.5%;
+                left: 51%;
+            }
+            &__link {
+                left: 55.5%;
+            }
             
         }
     }
     .slick-track div:nth-child(3n+3) {
         
         .featured-item {
-            padding-left: 30px;
-            padding-right: 10px;
-            
+            padding-left: 40px;
+            &__title {
+                top: 44.5%;
+                left: 55%;
+            }
+            &__link {
+                left: 53.5%;
+            }
         }
     }
 }

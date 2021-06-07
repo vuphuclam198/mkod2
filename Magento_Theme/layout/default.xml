@@ -42,9 +42,9 @@
                 <block class="Magento\Framework\View\Element\Template" name="footer-copyright" template="Magento_Theme::footer_copyright.phtml" before="-"/>
             </container>
         </referenceContainer>
-        <move element="logo" destination="header-wrapper" after="top.search"/>
+        <!-- <move element="logo" destination="header-wrapper" after="top.search"/> -->
 
-        <move element="minicart" destination="header-center-right" after="logo"/>
+        <!-- <move element="minicart" destination="header-center-right" after="logo"/> -->
         <!-- <referenceBlock name="minicart" remove="true"/> -->
         
         
