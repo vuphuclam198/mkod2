@@ -21,6 +21,9 @@
     }
 }
 .media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+    .lab {
+        font-size: 27px;
+    }
     .footer.content {
         position: relative;
         
@@ -29,15 +32,15 @@
     //icon
     .footer-top {
         &__left {
-            top: 158%;
+            top: 157%;
             position: absolute;
             bottom: 0;
             margin-bottom: -93px;
-            left: 68%;
+            left: 66%;
             width: 50%;
             transform: translateX(-50%);
             a {
-                padding-right: 5.5%;
+                padding-right: 4.5%;
             }
         }
     }
@@ -106,10 +109,10 @@
             font-size: @font-size-25px;
             min-width: 30%;
             display: inline-block;
-            padding-left: 1%;
+            padding-left: 5px;
             float: left;
             i {
-                padding-right: 4%;
+                padding-right: 3%;
             }
         }
     }
