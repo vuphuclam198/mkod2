@@ -74,8 +74,9 @@
             </image>
             <image id="product_page_image_large" type="image"/>
             <image id="product_page_image_medium" type="image">
-                <width>490</width>
-                <height>735</height>
+                <width>576</width>
+                <height>864</height>
+                <constrain>false</constrain>
             </image>
             <image id="product_page_image_small" type="thumbnail">
                 <width>176</width>

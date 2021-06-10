@@ -37,6 +37,12 @@
 //  Common
 //  _____________________________________________
 
+.product-item-actions a , .product-item .tocart span {
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
 & when (@media-common = true) {
 
     //
@@ -574,12 +580,7 @@
         margin: 0 auto;
     }
 }
-____________
-.product-item-actions a , .product-item .tocart {
-    &:hover {
-        text-decoration: underline;
-    }
-}
+
 .media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
 
     .product-add-form {
