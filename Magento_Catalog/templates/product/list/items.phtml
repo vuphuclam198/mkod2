@@ -233,7 +233,7 @@ $_item = null;
                                         <?php // phpcs:disable ?>
                                         <div class="product actions product-item-actions">
                                         <div class="actions-view">
-                                            <a href="#">View</a>
+                                            <a href="<?= $block->escapeUrl($block->getProductUrl($_item)) ?>">View</a>
                                         </div>
                                             <?php if ($showCart):?>
                                                 <?php if ($_item->isSaleable()):?>
@@ -332,18 +332,9 @@ $_item = null;
                     slidesToScroll: 5,
                     responsive: [
                         {
-                        breakpoint: 1320,
+                        breakpoint: 1024,
                         settings: {
-                            slidesToShow: 4,
-                            slidesToScroll: 1,
-                            infinite: false,
-                            dots: false
-                        }
-                        },
-                        {
-                        breakpoint: 1050,
-                        settings: {
-                            slidesToShow: 3,
+                            slidesToShow: 5,
                             slidesToScroll: 1,
                             infinite: false,
                             dots: false

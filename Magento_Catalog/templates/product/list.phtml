@@ -80,7 +80,7 @@ $_helper = $this->helper(Magento\Catalog\Helper\Output::class);
                             <div class="product actions product-item-actions"<?= strpos($pos, $viewMode . '-actions') ? $block->escapeHtmlAttr($position) : '' ?>>
                             
                             <div class="actions-view">
-                                <a href="#">View</a>
+                                <a href="<?= $block->escapeUrl($block->getProductUrl($_product)) ?>">View</a>
                             </div>
                             
                             <div class="actions-primary"<?= strpos($pos, $viewMode . '-primary') ? $block->escapeHtmlAttr($position) : '' ?>>
