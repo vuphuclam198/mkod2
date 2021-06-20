@@ -1,6 +1,6 @@
 Bước 1: Tạo 1 vendor là AHT
 
-Bước 1: git clone https://github.com/ThuyVan12/AHT_MKOD.git trong folder AHT
+Bước 1: git clone https://github.com/vuphuclam198/mkod2.git trong folder AHT
 
 Bước 2: Cần đổi lại folder theme thành mkod tránh vieecj bị lỗi vì file registration và theme.xml đang để tên theme là mkod
 
