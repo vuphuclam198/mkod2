@@ -1,6 +1,12 @@
 & when (@media-common = true) {
     .block.upsell {
         margin-bottom: 40px;
+        box-sizing: border-box;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 1360px;
+        padding-left: 20px;
+        padding-right: 20px;
         .block-title {
             padding: 35px 0px 21px 0;
         }
@@ -9,6 +15,8 @@
 
 @media only screen and(max-width: @screen__m) {
     .block.upsell {
+        padding-left: 15px;
+        padding-right: 15px;
         .block-title {
             padding: 5px 0 17px 0;
 
@@ -48,13 +56,26 @@
             padding: 0;
         }
         
-        .slick-prev {
-            left: 0;
-        }
+        .slick-prev, .slick-next {
+            position: absolute;
+            display: block;
+            height: 0;
+            width: 0;
+            line-height: 0px;
+            font-size: 0px;
+            cursor: pointer;
+            background: transparent;
+            color: transparent;
+            .transform(translate(0, -50%));
+            padding: 0;
+            border: none;
+            outline: none;
+            z-index: 100;
 
-        .slick-next {
-            left: unset;
-            right: 5%;
+            &::before {
+                content: '';
+                display: none
+            }
         }
     }
 }

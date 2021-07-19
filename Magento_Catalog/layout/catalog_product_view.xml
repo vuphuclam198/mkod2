@@ -15,9 +15,8 @@
 
         <referenceContainer name="main.content">
             <container name="page.top.breadcrumbs.crossbar" htmlTag="div" htmlClass="breadcrumbs-crossbar" before="-">
-                    <block class="Magento\Framework\View\Element\Template" name="products.crossbar.info" after="-" template="Magento_Catalog::crossbar_info.phtml" /> 
+                    <!-- <block class="Magento\Framework\View\Element\Template" name="products.crossbar.info" after="-" template="Magento_Catalog::crossbar_info.phtml" />  -->
             </container>
-
         </referenceContainer>
            
         <referenceContainer name="product.info.social" remove="true" />
@@ -31,7 +30,8 @@
             <referenceContainer name="product.info.main">
                 <referenceContainer name="product.info.price">
                     <referenceBlock name="product.info.review" remove="true" />
-                    <referenceBlock name="product.price.final"  />
+                    <referenceBlock name="product.info.sku" />
+                    <!-- <referenceBlock name="product.price.final" /> -->
                     <container name="product.info.stock" after="-"/>
                 </referenceContainer>
 
@@ -67,14 +67,31 @@
                 </referenceBlock>
             </referenceContainer>
         </referenceContainer>
-
+    <block class="Magento\Catalog\Block\Product\View" name="blockhj">
+        <action method="setText">
+            <argument name="text" translate="true" xsi:type="string">Text</argument>
+        </action>
+        <action method="setEnabled">
+            <argument name="enabled" xsi:type="boolean">true</argument>
+        </action>
+    </block>
+        <referenceBlock name="footer_links">
+            <block class="Magento\Framework\View\Element\Html\Link\Current" name="helloworld-link">
+                <arguments>
+                    <argument name="label" translate="true" xsi:type="string">Helloworld landing</argument>
+                    <argument name="path"   xsi:type="string">helloworld/index/index</argument>
+                </arguments>
+            </block>
+        </referenceBlock>
         <move element="product.info.media" destination="content" before="-"/>
         <move element="breadcrumbs" destination="page.top.breadcrumbs.crossbar" before="-" />
         <move element="page.main.title" destination="product.info.price" before="-" />
         <move element="product.info.type" destination="product.info.stock" before="-" />
         <move element="product.info" destination="product.info.price" after="-" />
         <move element="product.info.details" destination="product.info.main" before="product.info.social.link" />
-        <move element="catalog.product.related" destination="main.content" after="-"/>
+        <move element="catalog.product.related" destination="main.content" before="product.info.upsell"/>
         <move element="product.info.upsell" destination="main.content" after="-"/>
+        <move element="product.info.previousnext" destination="page.top.breadcrumbs.crossbar" after="-" />
+        <move element="product.price.final" destination="product.info.price" after="product.info.stock.sku"/>
     </body>
 </page>

@@ -154,7 +154,7 @@
                 font-family: @font-family__fugue;
                 margin-right: 10px;
                 min-width: 22px;
-                padding: 9px 6px;
+                padding: 6px 7px 10px 7px;
 
                 &.selected {
                     .lib-css(background-color, @swatch-option-text__selected__background-color) !important;
@@ -369,6 +369,15 @@
     .swatch-option.text {
         font-size: 20px;
         margin-right: 10px;
-        padding: 13px 12px;
+        padding: 9px 13px 18px 13px;
+    }
+}
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__xs) {
+    .swatch-attribute-options{
+        display: flex;
+        margin: 0;
+        flex-wrap: wrap;
+        justify-content: center;
     }
 }

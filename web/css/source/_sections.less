@@ -130,7 +130,7 @@
             > .switch {
                 background: none;
                 border: none;
-                padding: 5px 0 1px 0;
+                padding: 5px 0 3px 0;
                 font-size: 16px;
                 letter-spacing: .1px;
                 line-height: 43px;
@@ -150,7 +150,17 @@
         left: 96%;
     }
 
-    .product.data.items:nth-child(1) {
-        display: none;
+    // .product.data.items:nth-child(1) {
+    //     display: none;
+    // }
+    .product.data.items .item {
+        &.title {
+            &[aria-controls='description'] {
+                display: none;
+            }
+        }
+        &#description {
+            display: none;
+        }
     }
 }
